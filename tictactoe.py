@@ -61,6 +61,7 @@ def play_game():
     board.print_board()
 
     for turn in range(9):
+        win = 0
         if turn % 2 == 0:
             while True:
                 square = input("{} 'X': Choose a square number from 1 through 9 inclusive: ".format(player1))
@@ -79,6 +80,7 @@ def play_game():
             board.change_board("X", int(square))
             if board.check_win():
                 board.print_board()
+                win = 1
                 print("EYOO!!! {} you have Triumphed!!! Good Game!!!".format(player1))
                 break
         else:
@@ -99,11 +101,11 @@ def play_game():
             board.change_board("O", int(square))
             if board.check_win():
                 board.print_board()
+                win = 1
                 print("EYOO!!! {} you have Triumphed!!! Good Game!!!".format(player2))
                 break
         board.print_board()
-    print("It's a draw!!! You both equally suck :)")
+    if win == 0:
+        print("It's a draw!!! You both equally suck :)")
     
-
-
 play_game()
