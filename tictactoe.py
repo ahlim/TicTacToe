@@ -16,8 +16,7 @@ class Board:
         print("|---|---|---|")
         print("| {} | {} | {} |".format(self.board[4], self.board[5], self.board[6]))
         print("|---|---|---|")
-        print("| {} | {} | {} |".format(self.board[7], self.board[8], self.board[9]))
-        print("")
+        print("| {} | {} | {} |\n".format(self.board[7], self.board[8], self.board[9]))
 
 def play_game():
     x = input("Player 1, enter your name: ")
